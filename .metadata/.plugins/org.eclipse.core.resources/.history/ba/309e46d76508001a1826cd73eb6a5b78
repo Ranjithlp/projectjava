@@ -1,0 +1,39 @@
+
+public class PrimeNum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i =0;
+	    int num =0;
+	    int reversedInteger = 0;
+	    int n=0;
+	       //Empty String
+	       //String  primeNumbers = "";
+
+	    for (i = 1; i <= 1000; i++)         
+	       { 		  	  
+	          int counter=0; 	  
+	          for(num =i; num>=1; num--)
+		        {
+	             if(i%num==0)
+		     {
+	 		counter = counter + 1;
+		     }
+		  }
+		  if (counter ==2)
+		  {
+			  System.out.print(i+" ");
+			  int remainder = i % 10;
+	          reversedInteger = reversedInteger * 10 + remainder;
+	          i = i/10;
+	          if(i==reversedInteger)
+	          {
+	          }
+		  }	
+	       }	
+	       //System.out.println("Prime numbers from 1 to 100 are :");
+	       //System.out.println(primeNumbers);
+
+	}
+
+}

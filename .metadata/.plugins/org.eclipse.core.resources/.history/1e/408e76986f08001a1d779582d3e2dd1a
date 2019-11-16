@@ -1,0 +1,84 @@
+import java.util.Arrays;
+public class PrimePalAna {
+	
+	public static boolean palin(int a)
+	{
+		String s = Integer.toString(a);
+		String p = "";
+		for(int i=s.length()-1;i>=0;i--)
+		{
+			p = p + s.charAt(i);
+		}
+		if(p.equals(s))
+		{
+			return true;
+		}
+		else
+			return false;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 int i =0;
+	       int num =0;
+	       //Empty String
+	       String  primeNumbers = "";
+	       String primePalin = "";
+
+	       for (i = 1; i <= 1000; i++)         
+	       { 		  	  
+	          int counter=0; 	  
+	          for(num =i; num>=1; num--)
+		  {
+	             if(i%num==0)
+		     {
+	 		counter = counter + 1;
+		     }
+		  }
+		  if (counter ==2)
+		  {
+		     //Appended the Prime number to the String
+		     primeNumbers = primeNumbers + i + " ";
+		     boolean b = palin(i);
+		     if(b)
+		    	 primePalin = primePalin + i+" ";
+		  }	
+	       }	
+	       System.out.println("Prime numbers from 1 to 1000 are :");
+	       System.out.println(primeNumbers);
+	       System.out.println("Prime numbers which are palindrome are: ");
+	       System.out.println(primePalin);
+	       String[] str = primeNumbers.split(" ");
+	       for(int j=0;j<str.length;j++)
+	       {
+	    	   System.out.println(str[j]);
+	       }
+	       for(int j=0;j<str.length-1;j++)
+	       {
+	    	   char c[] = str[j].toCharArray();
+	    	   Arrays.sort(c);
+	    	   for(int k=1;k<str.length;k++)
+	    	   {
+	    		   char d[] = str[k].toCharArray();
+	    		   Arrays.sort(d);
+	    		   boolean flag = true;
+	    			if(c.length!=d.length)
+	    				flag = false;
+	    			for(int a=0;a<c.length;a++)
+	    				if(c[a]!=d[a])
+	    					flag = false;
+	    			
+	    			if(flag)
+	    			{
+	    				System.out.println("anagrams  "+str[i]+" "+str[j]);
+	    			}
+	    			   
+	    	   }
+	       }
+		
+
+		
+
+	}
+
+}
